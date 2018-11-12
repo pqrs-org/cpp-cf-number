@@ -16,6 +16,6 @@ Copy `include/pqrs` directory into your include directory.
 You can also install `include/pqrs` by using [cget](https://github.com/pfultz2/cget).
 
 ```shell
-cget install pqrs-org/cpp-cf_number@v1.0.0 --cmake header
+cget install pqrs-org/cpp-cf_number@v1.1.0 --cmake header
 cget install pqrs-org/cpp-cf_ptr@v1.3.0 --cmake header
 ```
