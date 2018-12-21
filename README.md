@@ -1,15 +1,15 @@
-[![Build Status](https://travis-ci.org/pqrs-org/cpp-cf_number.svg?branch=master)](https://travis-ci.org/pqrs-org/cpp-cf_number)
-[![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-cf_number/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/pqrs-org/cpp-cf-number.svg?branch=master)](https://travis-ci.org/pqrs-org/cpp-cf-number)
+[![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-cf-number/blob/master/LICENSE.md)
 
-# cpp-cf_number
+# cpp-cf-number
 
 A utility for `CFNumber`.
 
 ## Requirements
 
-cpp-cf_number depends the following classes.
+cpp-cf-number depends the following classes.
 
-- [pqrs::cf_ptr](https://github.com/pqrs-org/cpp-cf_ptr).
+- [pqrs::cf::cf_ptr](https://github.com/pqrs-org/cpp-cf-cf_ptr).
 
 ## Install
 
@@ -19,7 +19,7 @@ You can install `include/pqrs` by using [cget](https://github.com/pfultz2/cget).
 
 ```shell
 cget install pqrs-org/cpp-cget-recipes
-cget install pqrs-org/cpp-cf_number
+cget install pqrs-org/cpp-cf-number
 ```
 
 ### Manual install
