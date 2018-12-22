@@ -56,6 +56,16 @@ TEST_CASE("make_cf_number") {
 
 TEST_CASE("make_number") {
   {
+    auto n = pqrs::cf::make_number<int8_t>(nullptr);
+    REQUIRE(n == std::nullopt);
+  }
+
+  {
+    auto n = pqrs::cf::make_number<int8_t>(CFSTR("1234"));
+    REQUIRE(n == std::nullopt);
+  }
+
+  {
     int64_t value = 1099512677408LL; // 2^40 + 2^20 + 2^10 + 2^5
     auto number_ptr = pqrs::cf::make_cf_number(value);
 
