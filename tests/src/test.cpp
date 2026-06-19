@@ -1,7 +1,8 @@
 #include <boost/ut.hpp>
+#include <limits>
 #include <pqrs/cf/number.hpp>
 
-int main(void) {
+int main() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 
@@ -101,6 +102,72 @@ int main(void) {
         expect(n != std::nullopt);
         expect(*n == static_cast<double>(value));
       }
+    }
+  };
+
+  "signed_integer_boundaries"_test = [] {
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int8_t>::min());
+      auto n = pqrs::cf::make_number<int8_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int8_t>::min());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int8_t>::max());
+      auto n = pqrs::cf::make_number<int8_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int8_t>::max());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int16_t>::min());
+      auto n = pqrs::cf::make_number<int16_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int16_t>::min());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int16_t>::max());
+      auto n = pqrs::cf::make_number<int16_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int16_t>::max());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int32_t>::min());
+      auto n = pqrs::cf::make_number<int32_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int32_t>::min());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int32_t>::max());
+      auto n = pqrs::cf::make_number<int32_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int32_t>::max());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int64_t>::min());
+      auto n = pqrs::cf::make_number<int64_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int64_t>::min());
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(std::numeric_limits<int64_t>::max());
+      auto n = pqrs::cf::make_number<int64_t>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == std::numeric_limits<int64_t>::max());
+    }
+  };
+
+  "floating_point_values"_test = [] {
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(-123.25f);
+      auto n = pqrs::cf::make_number<float>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == -123.25_f);
+    }
+    {
+      auto number_ptr = pqrs::cf::make_cf_number(-123.25);
+      auto n = pqrs::cf::make_number<double>(*number_ptr);
+      expect(n != std::nullopt);
+      expect(*n == -123.25_d);
     }
   };
 
